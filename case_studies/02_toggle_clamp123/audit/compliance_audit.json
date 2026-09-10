@@ -1,0 +1,66 @@
+{
+  "base_mounting_flange": {
+    "original_volume_mm3": 79678.4421,
+    "ergonomic_volume_mm3": 79678.4421,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "actuation_handle": {
+    "original_volume_mm3": 18978.2547,
+    "ergonomic_volume_mm3": 18978.2547,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "connecting_link": {
+    "original_volume_mm3": 2186.6513,
+    "ergonomic_volume_mm3": 2186.6513,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "linear_plunger": {
+    "original_volume_mm3": 28919.8703,
+    "ergonomic_volume_mm3": 28919.8703,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "dowel_pin_a": {
+    "original_volume_mm3": 843.7794,
+    "ergonomic_volume_mm3": 843.7794,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "dowel_pin_b": {
+    "original_volume_mm3": 561.0361,
+    "ergonomic_volume_mm3": 561.0361,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "dowel_pin_c": {
+    "original_volume_mm3": 504.4874,
+    "ergonomic_volume_mm3": 504.4874,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  },
+  "full_assembly": {
+    "original_volume_mm3": 133859.1727,
+    "ergonomic_volume_mm3": 133859.1727,
+    "missing_volume_mm3": 0,
+    "extra_volume_mm3": 0,
+    "jaccard_similarity_pct": 100.0,
+    "verdict": "PASS"
+  }
+}
