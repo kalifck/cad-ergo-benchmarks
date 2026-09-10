@@ -158,14 +158,31 @@ All CAD solids are pre-rendered and exported in both industry-standard STEP and 
 
 ---
 
-## 🕹️ Interactive 3D Comparison Studio
+### 📸 Case Study 02 Visual Comparison Gallery
 
-Inside [`viewer/sharp123_viewer.html`](viewer/sharp123_viewer.html) is a self-contained, single-file Three.js application:
-- **Upright Engineering Orientation**: Base Plate rests naturally on the ground floor grid.
-- **Interactive Part Switcher**: Toggle between all 6 component pairs and the full 17-part assembly.
-- **Side-by-Side & Superimposed Diff Modes**: Inspect geometric tolerances and joint alignment in real-time.
-- **Cutaway Sectioning & Wireframe**: Cross-section internal fastener cavities and wall thicknesses.
-- **Zero Dependencies**: Simply double-click `viewer/sharp123_viewer.html` to open in any web browser!
+#### 1. Full 8-Solid Assembly (Side-by-Side)
+*Original CAD on the left (Slate Red) vs. Ergonomic Rewrite on the right (Polished Emerald).*  
+![ToggleClamp123 Assembly Side-by-Side](screenshots/toggle_clamp_assembly_side_by_side.png)
+
+#### 2. Optical Diff Superposition
+*Both 8-solid assemblies superimposed in world space ($0.0000\text{ mm}^3$ interference).*  
+![ToggleClamp123 Assembly Diff Mode](screenshots/toggle_clamp_assembly_diff_mode.png)
+
+#### 3. Actuation Handle (Pivot B Clevis Tongue)
+*Zero manual trigonometry! Replacing `math.radians()`, `sin()`, `cos()` with a single 2D location rotation.*  
+![ToggleClamp123 Handle Comparison](screenshots/toggle_clamp_handle_comparison.png)
+
+#### 4. Base Mounting Flange & Guide Barrel
+*Declarative `GridLocations` replacing manual 4-corner math, and symmetrical ears mirrored across Plane.XZ.*  
+![ToggleClamp123 Base Flange Comparison](screenshots/toggle_clamp_base_flange_comparison.png)
+
+---
+
+## 🕹️ Interactive 3D Comparison Studios
+
+Both case studies include self-contained, single-file Three.js WebGL comparison studios (zero-server required, just double click):
+1. [**`sharp123_viewer.html`**](viewer/sharp123_viewer.html): 17-part knife sharpening station with side-by-side & diff modes.
+2. [**`toggle_clamp_viewer.html`**](viewer/toggle_clamp_viewer.html): 8-solid push-action toggle clamp with real-time component toggles and tolerance inspection.
 
 ---
 
@@ -176,7 +193,8 @@ cad-ergo-benchmarks/
 ├── README.md                      # Benchmark suite overview & discovery documentation
 ├── index.html                     # GitHub Pages launcher for the interactive 3D viewer
 ├── viewer/
-│   └── sharp123_viewer.html       # Standalone 3D multi-part comparison viewer
+│   ├── sharp123_viewer.html       # Standalone 3D multi-part comparison viewer (sharp123)
+│   └── toggle_clamp_viewer.html   # Standalone 3D multi-part comparison viewer (ToggleClamp123)
 ├── screenshots/                   # High-res WebGL renders, optical diffs, and kinematic GIFs
 └── case_studies/
     ├── 01_sharp123/               # Case Study 01: sharp123 by @jdegenstein
@@ -188,8 +206,9 @@ cad-ergo-benchmarks/
         ├── README.md              # In-depth case study breakdown & audit report
         ├── code_comparison/       # Side-by-side commented Python scripts
         ├── audit/                 # OpenCASCADE Boolean diff audit scripts & JSON
-        ├── screenshots/           # Kinematic simulation GIF & interface views
-        └── cad_models/            # Production STEP & STL models
+        ├── screenshots/           # Kinematic simulation GIF & side-by-side renders
+        ├── cad_models/            # Production STEP & STL models
+        └── toggle_clamp_viewer.html # Standalone 3D comparison studio
 ```
 
 ---

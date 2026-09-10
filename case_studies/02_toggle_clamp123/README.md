@@ -74,17 +74,45 @@ Pre-exported production models ready for CNC milling, 3D printing, or downstream
 
 ---
 
-## 📸 Web Studio Renders
+## 📸 High-Resolution Visual Comparison Gallery
 
-| 🎛️ Kinematic Controls & HUD | 📐 3D Viewport & Inspection |
-| :---: | :---: |
-| ![Studio UI Controls](screenshots/studio_preview_1.png) | ![Studio 3D Viewport](screenshots/studio_preview_2.png) |
+### 1. Full 8-Solid Assembly (Side-by-Side)
+*Original CAD on the left (Slate Red) vs. Ergonomic Rewrite on the right (Polished Emerald).*  
+![ToggleClamp123 Assembly Side-by-Side](screenshots/toggle_clamp_assembly_side_by_side.png)
+
+### 2. Optical Diff Superposition
+*Both 8-solid assemblies superimposed in world space with opacity blending ($0.0000\text{ mm}^3$ interference).*  
+![ToggleClamp123 Assembly Diff Mode](screenshots/toggle_clamp_assembly_diff_mode.png)
+
+### 3. Actuation Handle (Pivot B Clevis Tongue)
+*Zero manual trigonometry! Replacing `math.radians()`, `sin()`, `cos()` with a single 2D location rotation.*  
+![ToggleClamp123 Handle Comparison](screenshots/toggle_clamp_handle_comparison.png)
+
+### 4. Base Mounting Flange & Guide Barrel
+*Declarative `GridLocations` replacing manual 4-corner math, and symmetrical ears mirrored across Plane.XZ.*  
+![ToggleClamp123 Base Flange Comparison](screenshots/toggle_clamp_base_flange_comparison.png)
+
+### 5. Linear Plunger & Pressure Foot
+*Eliminating empty sketch boolean traps with clean parametric primitives.*  
+![ToggleClamp123 Plunger Comparison](screenshots/toggle_clamp_plunger_comparison.png)
+
+---
+
+## 🕹️ Interactive 3D Comparison Studio
+
+Inside [`toggle_clamp_viewer.html`](toggle_clamp_viewer.html) (or `../../viewer/toggle_clamp_viewer.html`):
+- **Upright Engineering Orientation**: Base Flange rests flat on the floor grid.
+- **Interactive Component Toggles**: Switch between Full Assembly, Handle, Base, Plunger, Link, and Pins.
+- **Side-by-Side & Superimposed Diff Modes**: Inspect tolerances and clearances in real-time.
+- **Zero Server Required**: Self-contained single-file WebGL app.
 
 ---
 
 ## 📂 Folder Structure
-- `code_comparison/`: Side-by-side commented Python files (`handle_comparison.py`, `base_flange_comparison.py`).
+- `code_comparison/`: Side-by-side commented Python files (`handle_comparison.py`, `base_flange_comparison.py`, `toggle_clamp_comparison.py`).
 - `audit/`: Automated OpenCASCADE Boolean audit script and `compliance_audit.json`.
 - `cad_models/step/`: Production STEP models.
 - `cad_models/stl/`: Production binary STL meshes.
-- `screenshots/`: Kinematic GIF demo and WebGL interface screenshots.
+- `screenshots/`: High-resolution WebGL renders, optical diffs, and kinematic simulation GIF.
+- `toggle_clamp_viewer.html`: Standalone interactive 3D comparison studio.
+
