@@ -1,0 +1,47 @@
+[
+  {
+    "part": "ClampArm",
+    "volume_orig_mm3": 103080.9,
+    "volume_cand_mm3": 103080.9,
+    "intersection_mm3": 103080.9,
+    "missing_material_mm3": 0.0,
+    "extra_material_mm3": 0.0,
+    "jaccard_similarity_pct": 100.0,
+    "bbox_delta_mm": {
+      "dx": 0.0,
+      "dy": 0.0,
+      "dz": 0.0
+    },
+    "verdict": "PASS"
+  },
+  {
+    "part": "MainTower",
+    "volume_orig_mm3": 688554.55,
+    "volume_cand_mm3": 688554.55,
+    "intersection_mm3": 688554.55,
+    "missing_material_mm3": 0.0,
+    "extra_material_mm3": 0.0,
+    "jaccard_similarity_pct": 100.0,
+    "bbox_delta_mm": {
+      "dx": 0.0,
+      "dy": 0.0,
+      "dz": 0.0
+    },
+    "verdict": "PASS"
+  },
+  {
+    "part": "BasePlate",
+    "volume_orig_mm3": 291382.83,
+    "volume_cand_mm3": 291382.83,
+    "intersection_mm3": 291382.83,
+    "missing_material_mm3": 0.0,
+    "extra_material_mm3": 0.0,
+    "jaccard_similarity_pct": 100.0,
+    "bbox_delta_mm": {
+      "dx": 0.0,
+      "dy": 0.0,
+      "dz": 0.0
+    },
+    "verdict": "PASS"
+  }
+]
