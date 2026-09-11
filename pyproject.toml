@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "build123d-contrib"
+version = "0.2.0"
+description = "Ergonomic Mechanical CAD Primitives and Fluent Selectors for Build123d (Built for Humans and AI Agents)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "kalifck", email = "kalifck@users.noreply.github.com" }
+]
+keywords = ["cad", "build123d", "opencascade", "3d-modeling", "parametric-cad", "ergonomics", "ai-agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Manufacturing",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "build123d>=0.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/kalifck/cad-ergo-benchmarks"
+Repository = "https://github.com/kalifck/cad-ergo-benchmarks.git"
+Issues = "https://github.com/kalifck/cad-ergo-benchmarks/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["build123d_contrib*", "b123d_contrib*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
