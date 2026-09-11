@@ -58,7 +58,7 @@ from build123d_contrib import (
     Gusset,
 )
 
-# Fluent selectors and watertightness checks are automatically activated!
+# Fluent selectors, watertightness checks, and brep_diff are automatically activated!
 with BuildPart() as p:
     Box(40, 40, 20)
     # Drill a Ø10mm hole with dual 1.5mm entry & exit chamfers in 1 line:
@@ -66,6 +66,13 @@ with BuildPart() as p:
 
 # Verify B-Rep watertightness instantly:
 assert p.part.is_watertight()
+
+# 🩻 1-Call Optical & Volumetric Diff (Zero-Token OpenCASCADE Regression Testing):
+rev_a = Box(20, 20, 10)
+rev_b = Box(20, 20, 10)
+diff = brep_diff(rev_a, rev_b)  # or rev_a.diff(rev_b)
+print(diff)
+# Output: [BREP DIFF] MATCH (100.00% Jaccard) | Missing: 0.0000 mm³ | Extra: 0.0000 mm³ | COM Shift: 0.0000 mm
 ```
 
 ---
@@ -90,6 +97,7 @@ When generating Build123d CAD code:
    - Stiffening ribs: `Gusset(length=20, height=25, thickness=4)`
    - Grip flutes: `FlutePattern(outer_radius=15, length=30, count=8)`
 7. **Watertightness**: Check closure with `solid.is_watertight()`.
+8. **Volumetric Verification**: Verify revisions using `brep_diff(target, candidate)` or `target.diff(candidate)` to prove $0.0000\text{ mm}^3$ parity.
 ```
 
 ---

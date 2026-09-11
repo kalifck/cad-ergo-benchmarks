@@ -42,12 +42,18 @@ from .diagnostics import (
     is_watertight,
     patch_diagnostics,
 )
+from .diff import (
+    BrepDiffResult,
+    brep_diff,
+    patch_diff,
+)
 
 
 def patch_all() -> None:
     """Activates all monkeypatches on build123d classes (ShapeList, Solid, Part)."""
     patch_shapelist()
     patch_diagnostics()
+    patch_diff()
 
 
 # Automatically apply monkeypatches upon import so fluent syntax is immediately available
@@ -78,9 +84,12 @@ __all__ = [
     "Gusset",
     "FlutePattern",
     "HoseBarb",
-    # Diagnostics
+    # Diagnostics & Volumetric Diff
     "is_watertight",
     "diagnostics",
     "patch_diagnostics",
+    "brep_diff",
+    "BrepDiffResult",
+    "patch_diff",
     "patch_all",
 ]

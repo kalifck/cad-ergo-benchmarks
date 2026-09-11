@@ -20,6 +20,7 @@ from build123d_contrib import (
     LobePair,
     PCDLocations,
     TearDrop,
+    brep_diff,
     is_watertight,
     patch_all,
 )
@@ -170,3 +171,39 @@ def test_diagnostics_and_watertightness():
     assert diag["solid_count"] == 1
     assert abs(diag["volume_mm3"] - 1000.0) < 1e-1
     assert box.is_watertight is True
+
+
+def test_brep_diff_identical():
+    """Tests that identical shapes produce 100% Jaccard match with zero missing/extra volume."""
+    b1 = bd.Box(10, 10, 10)
+    b2 = bd.Box(10, 10, 10)
+    diff = brep_diff(b1, b2)
+    assert diff.match is True
+    assert diff.jaccard_pct == 100.0
+    assert diff.missing_volume == 0.0
+    assert diff.extra_volume == 0.0
+    assert diff.com_shift_mm == 0.0
+    assert "MATCH" in str(diff)
+
+
+def test_brep_diff_modified():
+    """Tests that a drilled hole produces missing volume and reduced Jaccard similarity."""
+    b_solid = bd.Box(10, 10, 10)
+    b_drilled = bd.Box(10, 10, 10) - bd.Cylinder(radius=2, height=10)
+    diff = brep_diff(b_solid, b_drilled)
+    assert diff.match is False
+    assert diff.jaccard_pct < 100.0
+    assert diff.missing_volume > 0.0
+    assert diff.extra_volume == 0.0
+    assert diff.missing is not None
+    assert "MISMATCH" in str(diff)
+
+
+def test_brep_diff_monkeypatch():
+    """Tests that .diff() is available directly on Part and Solid objects."""
+    b1 = bd.Box(20, 20, 10)
+    b2 = bd.Box(20, 20, 10)
+    diff = b1.diff(b2)
+    assert diff.match is True
+    assert diff.jaccard_pct == 100.0
+
