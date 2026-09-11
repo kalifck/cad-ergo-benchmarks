@@ -310,15 +310,6 @@ cad-ergo-benchmarks/
         ├── cad_models/            # Production STEP & STL models
         └── toggle_clamp_viewer.html # Standalone 3D comparison studio
 ```
-
----
-
-## 🎁 Roadmap & Future Work
-
-1. **Community Adoption**: Maintaining `build123d-contrib` as an accessible, standalone companion library for both human engineers and AI code assistants.
-2. **More Real-World Benchmarks**: Adding case studies covering sheet metal brackets, planetary gears, and compliant mechanisms.
-3. **Multi-Model Evaluation**: Benchmarking token reduction and prompt accuracy across Gemini 3.8, Claude 3.7 Sonnet, and GPT-4o.
-
 ---
 
 ## ⚖️ License & Acknowledgements
